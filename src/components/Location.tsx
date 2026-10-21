@@ -4,6 +4,8 @@ import { business, schedule } from '../data/business'
 import { storeStatus } from '../lib/hours'
 import { waLink } from '../lib/whatsapp'
 import { WhatsAppIcon } from './BrandIcons'
+import { Container, Lead, Section, SectionTitle } from './ui'
+import { buttonClass, cardClass, cn } from '../lib/styles'
 
 const steps = [
   { icon: MessageCircle, title: 'Chame no WhatsApp', text: 'Conte o que precisa: tipo de chave, fechadura, cofre ou alicate.' },
@@ -23,28 +25,33 @@ export function Location() {
   const ordered = [...schedule.slice(1), schedule[0]].map((s, i) => ({ ...s, index: (i + 1) % 7 }))
 
   return (
-    <section id="atendimento" className="section">
-      <div className="container location">
+    <Section id="atendimento">
+      <Container className="grid items-start gap-8 split:grid-cols-[1fr_1.2fr] split:gap-12">
         <div>
-          <h2 className="fx" data-scroll="enter">A gente vai até você</h2>
-          <p className="section__lead fx" data-scroll="enter" data-delay="0.15">
-            Sem loja física: o atendimento é feito pessoalmente, no endereço que você agendar, em {business.serviceArea}.
-          </p>
+          <SectionTitle>A gente vai até você</SectionTitle>
+          <Lead>O atendimento é feito pessoalmente, no endereço que você agendar, em {business.serviceArea}.</Lead>
 
-          <ol className="steps">
+          <ol className="my-8 grid gap-5">
             {steps.map(({ icon: Icon, title, text }, i) => (
-              <li key={title} className="fx" data-scroll="enter" data-delay={i * 0.15}>
-                <span className="steps__num" aria-hidden="true">{i + 1}</span>
+              <li key={title} className="fx flex gap-4" data-scroll="enter" data-delay={i * 0.15}>
+                <span
+                  className="grid size-9 shrink-0 place-items-center rounded-full bg-accent/12 font-display font-extrabold text-accent"
+                  aria-hidden="true"
+                >
+                  {i + 1}
+                </span>
                 <div>
-                  <h3><Icon size={18} aria-hidden="true" /> {title}</h3>
-                  <p>{text}</p>
+                  <h3 className="flex items-center gap-2 text-[1.1rem]">
+                    <Icon size={18} className="text-accent" aria-hidden="true" /> {title}
+                  </h3>
+                  <p className="mt-1 text-muted">{text}</p>
                 </div>
               </li>
             ))}
           </ol>
 
           <a
-            className="btn btn--primary btn--lg"
+            className={buttonClass('primary', 'lg')}
             href={waLink(`Olá! Gostaria de agendar um atendimento com o ${business.name}.`)}
             target="_blank"
             rel="noopener"
@@ -53,29 +60,38 @@ export function Location() {
           </a>
         </div>
 
-        <div className="hours fx" data-scroll="enter" data-delay="0.1">
-          <div className="hours__head">
-            <Clock size={20} aria-hidden="true" />
+        <div className={cn(cardClass, 'fx p-5')} data-scroll="enter" data-delay="0.1">
+          <div className="flex flex-wrap items-center gap-2.5 font-semibold">
+            <Clock size={20} className="text-accent" aria-hidden="true" />
             <span>Horário de atendimento</span>
-            <span className={`pill ${status.open ? 'pill--open' : 'pill--closed'}`}>
+            <span
+              className={cn(
+                'ml-auto rounded-full px-3 py-0.5 text-[0.8rem] font-semibold whitespace-nowrap',
+                status.open ? 'bg-whatsapp/15 text-whatsapp' : 'bg-danger/15 text-danger',
+              )}
+            >
               {status.open ? 'Atendendo agora' : 'Fora do horário'}
             </span>
           </div>
-          <table>
+          <table className="mt-3 w-full border-collapse">
             <tbody>
-              {ordered.map(({ day, time, index }) => (
-                <tr key={day} className={index === status.today ? 'today' : undefined}>
-                  <th scope="row">{day}</th>
-                  <td>{time ? `${time[0]} – ${time[1]}` : 'Fechado'}</td>
-                </tr>
-              ))}
+              {ordered.map(({ day, time, index }) => {
+                const today = index === status.today
+                const cell = cn('border-t border-line py-[7px]', today ? 'font-semibold text-fg' : 'font-normal text-muted')
+                return (
+                  <tr key={day}>
+                    <th scope="row" className={cn(cell, 'text-left')}>{day}</th>
+                    <td className={cn(cell, 'text-right tabular-nums')}>{time ? `${time[0]} – ${time[1]}` : 'Fechado'}</td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
-          <p className="hours__note">
+          <p className="mt-4 text-[0.9rem] text-muted">
             Fora do horário? Mande sua mensagem no WhatsApp que respondemos assim que possível.
           </p>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   )
 }

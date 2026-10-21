@@ -3,45 +3,55 @@ import { business, gallery } from '../data/business'
 import { waLink } from '../lib/whatsapp'
 import { InstagramIcon, WhatsAppIcon } from './BrandIcons'
 import { Logo } from './Logo'
+import { Container } from './ui'
+
+const linkClass = 'inline-flex items-center gap-2 text-muted transition-colors duration-200 hover:text-accent'
 
 export function Footer() {
   return (
-    <footer className="footer">
-      <div className="container footer__inner">
+    <footer className="border-t border-line pt-12 pb-24">
+      <Container className="flex flex-wrap items-center justify-between gap-6">
         <Logo />
 
-        <ul className="footer__links">
-          <li><a href={waLink()} target="_blank" rel="noopener"><WhatsAppIcon size={18} /> WhatsApp</a></li>
-          <li><a href={`tel:${business.phoneTel}`}><Phone size={18} aria-hidden="true" /> {business.phoneDisplay}</a></li>
-          <li><a href={business.instagram} target="_blank" rel="noopener"><InstagramIcon size={18} /> {business.instagramHandle}</a></li>
-          <li><a href={business.google} target="_blank" rel="noopener"><Star size={18} aria-hidden="true" /> Avalie no Google</a></li>
+        <ul className="flex flex-wrap gap-x-6 gap-y-3">
+          <li><a className={linkClass} href={waLink()} target="_blank" rel="noopener"><WhatsAppIcon size={18} /> WhatsApp</a></li>
+          <li><a className={linkClass} href={`tel:${business.phoneTel}`}><Phone size={18} aria-hidden="true" /> {business.phoneDisplay}</a></li>
+          <li><a className={linkClass} href={business.instagram} target="_blank" rel="noopener"><InstagramIcon size={18} /> {business.instagramHandle}</a></li>
+          <li><a className={linkClass} href={business.google} target="_blank" rel="noopener"><Star size={18} aria-hidden="true" /> Avalie no Google</a></li>
         </ul>
 
-        <p className="footer__copy">
+        <p className="flex-auto text-[0.85rem] text-muted">
           © {new Date().getFullYear()} {business.name}. Atendimento a domicílio em {business.serviceArea}.
         </p>
 
-        <p className="footer__dev">
+        <p className="text-[0.85rem] text-muted">
           Desenvolvido por{' '}
-          <a href="https://www.carlindojunior.xyz/" target="_blank" rel="noopener">Junior</a>
+          <a
+            className="-mx-1 -my-2.5 inline-block px-1 py-2.5 font-semibold text-accent hover:underline"
+            href="https://www.carlindojunior.xyz/"
+            target="_blank"
+            rel="noopener"
+          >
+            Junior
+          </a>
         </p>
 
         {gallery.some((m) => m.credit) && (
-          <details id="creditos" className="credits">
-            <summary>Créditos das imagens</summary>
-            <ul>
+          <details id="creditos" className="w-full text-[0.8rem] text-muted">
+            <summary className="w-fit cursor-pointer">Créditos das imagens</summary>
+            <ul className="mt-2 grid gap-1">
               {gallery.map(({ src, caption, credit }) =>
                 credit ? (
                   <li key={src}>
                     {caption}: {credit.author}, {credit.license},{' '}
-                    <a href={credit.source} target="_blank" rel="noopener">Wikimedia Commons</a>
+                    <a className="underline" href={credit.source} target="_blank" rel="noopener">Wikimedia Commons</a>
                   </li>
                 ) : null,
               )}
             </ul>
           </details>
         )}
-      </div>
+      </Container>
     </footer>
   )
 }

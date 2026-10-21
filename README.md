@@ -1,6 +1,6 @@
 # Chaveiro Oliveira — site
 
-Landing page em React + Vite + TypeScript.
+Landing page em React + Vite + TypeScript, estilizada com Tailwind CSS v4.
 
 ## Rodar
 
@@ -11,6 +11,12 @@ npm install
 npm run dev      # desenvolvimento em http://localhost:5173
 npm run build    # gera a pasta dist/ para publicar
 ```
+
+## Estilos
+
+- Cores, fontes, sombras e breakpoints da marca ficam no `@theme` de `src/index.css` (viram classes como `bg-surface`, `text-accent`, `split:`).
+- Botão, card e `cn()` ficam em `src/lib/styles.ts`; `Section`, `Container`, `SectionTitle` e `Lead` em `src/components/ui.tsx`.
+- Animações e efeitos de rolagem (classes `fx`, `fx-left`, `reveal`…) ficam em CSS no `src/index.css`, ligados ao `src/lib/scrollFx.ts`.
 
 ## Editar conteúdo
 
