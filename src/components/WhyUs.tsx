@@ -1,11 +1,11 @@
-import { Zap, Star, ShieldCheck, Truck } from 'lucide-react'
+import { Award, Star, ShieldCheck, Truck } from 'lucide-react'
 import { business } from '../data/business'
 import { Container, Section, SectionTitle } from './ui'
 
 const items = [
-  { icon: Zap, title: 'Atendimento ágil', text: 'Agendou, chegamos no horário e resolvemos sem enrolação.' },
+  { icon: Award, title: business.experience, text: 'Duas décadas resolvendo problemas com chaves, fechaduras e cofres.' },
   { icon: Star, title: `Nota ${business.rating} no Google`, text: `Mais de ${business.reviews} clientes avaliaram nosso trabalho.` },
-  { icon: ShieldCheck, title: 'Confiança', text: 'Serviço honesto, preço justo e cuidado com o que é seu.' },
+  { icon: ShieldCheck, title: 'Confiança', text: 'Pontualidade, serviço honesto, preço justo e cuidado com o que é seu.' },
   { icon: Truck, title: 'Vamos até você', text: `Atendimento no endereço que você agendar, em ${business.serviceArea}.` },
 ]
 

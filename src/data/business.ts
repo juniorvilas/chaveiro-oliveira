@@ -9,6 +9,7 @@ export const business = {
   rating: '5,0',
   reviews: 460,
   serviceArea: 'Lauro de Freitas e região',
+  experience: 'Mais de 20 anos de experiência',
   email: 'oliveiraservicos.24@gmail.com',
   instagram: 'https://www.instagram.com/cheveiro_olive/',
   instagramHandle: '@cheveiro_olive',

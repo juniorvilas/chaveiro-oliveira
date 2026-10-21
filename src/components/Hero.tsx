@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import { Phone, Star, Truck } from 'lucide-react'
+import { Award, Phone, Star, Truck } from 'lucide-react'
 import { business } from '../data/business'
 import { waLink } from '../lib/whatsapp'
 import { WhatsAppIcon } from './BrandIcons'
@@ -50,9 +50,14 @@ export function Hero() {
             </a>
           </div>
 
-          <p className="reveal mt-7 flex items-center gap-2 text-[0.95rem] text-muted" style={step(4)}>
-            <Truck size={16} aria-hidden="true" /> Atendimento a domicílio em {business.serviceArea}
-          </p>
+          <ul className="reveal mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[0.95rem] text-muted" style={step(4)}>
+            <li className="flex items-center gap-2">
+              <Award size={16} className="text-accent" aria-hidden="true" /> {business.experience}
+            </li>
+            <li className="flex items-center gap-2">
+              <Truck size={16} aria-hidden="true" /> Atendimento a domicílio em {business.serviceArea}
+            </li>
+          </ul>
         </div>
 
         <div className="fx-apart-right" data-scroll="hero">
