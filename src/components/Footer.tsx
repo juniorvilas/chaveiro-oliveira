@@ -1,4 +1,4 @@
-import { Phone, Star } from 'lucide-react'
+import { Mail, Phone, Star } from 'lucide-react'
 import { business, gallery } from '../data/business'
 import { waLink } from '../lib/whatsapp'
 import { InstagramIcon, WhatsAppIcon } from './BrandIcons'
@@ -16,6 +16,7 @@ export function Footer() {
         <ul className="flex flex-wrap gap-x-6 gap-y-3">
           <li><a className={linkClass} href={waLink()} target="_blank" rel="noopener"><WhatsAppIcon size={18} /> WhatsApp</a></li>
           <li><a className={linkClass} href={`tel:${business.phoneTel}`}><Phone size={18} aria-hidden="true" /> {business.phoneDisplay}</a></li>
+          <li><a className={linkClass} href={`mailto:${business.email}`}><Mail size={18} aria-hidden="true" /> {business.email}</a></li>
           <li><a className={linkClass} href={business.instagram} target="_blank" rel="noopener"><InstagramIcon size={18} /> {business.instagramHandle}</a></li>
           <li><a className={linkClass} href={business.google} target="_blank" rel="noopener"><Star size={18} aria-hidden="true" /> Avalie no Google</a></li>
         </ul>

@@ -24,6 +24,18 @@
   --shadow-card-hover: 0 0 0 1px rgb(245 184 0 / 0.45), 0 1px 2px rgb(0 0 0 / 0.4), 0 16px 32px -16px rgb(0 0 0 / 0.7);
   --ease-quint: cubic-bezier(0.23, 1, 0.32, 1);
 
+  /* Barrinha de progresso da bolinha ativa do carrossel (5s por foto) */
+  --animate-dot-fill: dot-fill 5s linear both;
+
+  @keyframes dot-fill {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
   /* Breakpoints usados no layout (mobile-first) */
   --breakpoint-xxs: 22.5rem; /* 360px: estrelas no selo da abertura */
   --breakpoint-xs: 30.0625rem; /* 481px: botões deixam de ocupar a largura toda */
@@ -187,6 +199,11 @@
 
 .scroll-fx .statement-word {
   opacity: calc(0.14 + 0.86 * clamp(0, (var(--p, 1) * 1.15 - var(--w)) * 8, 1));
+}
+
+/* Carrossel: com o mouse em cima da galeria, a contagem para a próxima foto fica parada */
+.gallery-autoplay:hover .dot-progress {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
