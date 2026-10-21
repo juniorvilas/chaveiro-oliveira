@@ -2,7 +2,7 @@ import { Zap, Star, ShieldCheck, Truck } from 'lucide-react'
 import { business } from '../data/business'
 
 const items = [
-  { icon: Zap, title: 'Atendimento ágil', text: 'Você chega e sai com o problema resolvido, sem enrolação.' },
+  { icon: Zap, title: 'Atendimento ágil', text: 'Agendou, chegamos no horário e resolvemos sem enrolação.' },
   { icon: Star, title: `Nota ${business.rating} no Google`, text: `Mais de ${business.reviews} clientes avaliaram nosso trabalho.` },
   { icon: ShieldCheck, title: 'Confiança', text: 'Serviço honesto, preço justo e cuidado com o que é seu.' },
   { icon: Truck, title: 'Vamos até você', text: `Atendimento no endereço que você agendar, em ${business.serviceArea}.` },
@@ -10,7 +10,7 @@ const items = [
 
 export function WhyUs() {
   return (
-    <section id="sobre" className="section">
+    <section id="sobre" className="section section--alt">
       <div className="container">
         <p className="eyebrow">Por que nós</p>
         <h2>Quem atende, resolve</h2>
