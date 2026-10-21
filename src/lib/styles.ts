@@ -8,7 +8,8 @@ const buttonBase =
   'motion-reduce:transition-none motion-reduce:active:scale-100'
 
 const buttonVariants = {
-  primary: 'border-transparent bg-accent text-on-accent hover:bg-accent-hover',
+  primary:
+    'border-transparent bg-linear-to-b from-[#ffb733] to-[#ff8f00] text-on-accent shadow-[inset_0_1px_0_rgb(255_255_255/0.35),0_8px_24px_-10px_rgb(255_140_0/0.7)] hover:from-[#ffc24d] hover:to-[#ffa000]',
   ghost: 'border-line text-fg hover:border-accent hover:text-accent',
 }
 

@@ -186,6 +186,88 @@
   opacity: calc(0.14 + 0.86 * clamp(0, (var(--p, 1) * 1.15 - var(--w)) * 8, 1));
 }
 
+/* Seções alternadas: degradê vertical quente com linhas de luz laranja no lugar da borda */
+.section-alt {
+  position: relative;
+  background: linear-gradient(180deg, #1d1b19 0%, #151413 100%);
+}
+
+.section-alt::before,
+.section-alt::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(255 160 0 / 0.35), transparent);
+}
+
+.section-alt::before {
+  top: 0;
+}
+
+.section-alt::after {
+  bottom: 0;
+}
+
+/* Faixa do cadeado: o cursor vira uma chave (SVG; PNG para navegadores sem cursor SVG) */
+.key-cursor {
+  cursor: url('/cursor-chave.svg') 3 3, url('/cursor-chave.png') 3 3, auto;
+}
+
+/* Cadeado: o corpo dá um "clique" e a alça sobe, girando presa pela perna direita */
+.lock .lock-shackle {
+  transform-box: view-box;
+  transform-origin: 140px 140px;
+  transition: transform 520ms var(--ease-quint) 120ms;
+}
+
+.lock .lock-glow {
+  opacity: 0;
+  transition: opacity 500ms var(--ease-quint) 140ms;
+}
+
+.lock[data-open='true'] .lock-shackle {
+  transform: translateY(-26px) rotate(14deg);
+}
+
+.lock[data-open='true'] .lock-glow {
+  opacity: 1;
+}
+
+.lock[data-open='true'] .lock-body {
+  animation: lock-click 360ms var(--ease-quint) 120ms;
+}
+
+/* Antes de abrir, o cadeado balança de leve quando a chave (cursor) entra na faixa */
+@media (hover: hover) {
+  .key-cursor:hover .lock[data-open='false'] svg {
+    animation: lock-wiggle 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes lock-click {
+  40% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes lock-wiggle {
+  0%,
+  70%,
+  100% {
+    transform: rotate(0);
+  }
+  78% {
+    transform: rotate(-4deg);
+  }
+  86% {
+    transform: rotate(3deg);
+  }
+  94% {
+    transform: rotate(-1deg);
+  }
+}
+
 /* Carrossel: com o mouse em cima da galeria, a contagem para a próxima foto fica parada */
 .gallery-autoplay:hover .dot-progress {
   animation-play-state: paused;
@@ -196,6 +278,16 @@
   .reveal-right,
   .settle,
   .logo-intro .logo-emblem {
+    animation: none;
+  }
+
+  .lock .lock-shackle,
+  .lock .lock-glow {
+    transition: none;
+  }
+
+  .lock[data-open='true'] .lock-body,
+  .key-cursor:hover .lock[data-open='false'] svg {
     animation: none;
   }
 }

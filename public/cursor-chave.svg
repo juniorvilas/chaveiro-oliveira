@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Chave inclinada: a ponta (canto superior esquerdo) é o ponto de clique -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 3 L19 19 M8 8 L11 5 M12 12 L15 9" stroke="#ffffff" stroke-width="6"/>
+    <circle cx="23" cy="23" r="6.5" stroke="#ffffff" stroke-width="6"/>
+    <path d="M3 3 L19 19 M8 8 L11 5 M12 12 L15 9" stroke="#141414" stroke-width="3"/>
+    <circle cx="23" cy="23" r="6.5" fill="#ffa000" stroke="#141414" stroke-width="3"/>
+    <circle cx="23" cy="23" r="2" fill="#141414"/>
+  </g>
+</svg>

@@ -13,7 +13,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden bg-[radial-gradient(50%_60%_at_78%_40%,rgb(255_160_0/0.13),transparent_70%)] pt-10 pb-16 split:pt-16 split:pb-[88px]"
+      className="relative overflow-hidden bg-[radial-gradient(45%_48%_at_76%_42%,rgb(255_140_0/0.22),transparent_72%),radial-gradient(35%_36%_at_10%_62%,rgb(255_190_0/0.07),transparent_72%)] pt-10 pb-16 split:pt-16 split:pb-[88px]"
     >
       <Container className="grid items-center gap-9 split:grid-cols-[1.15fr_0.85fr] split:gap-14">
         <div className="fx-apart-left" data-scroll="hero">

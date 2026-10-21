@@ -10,7 +10,7 @@ export function Container({ className, ...props }: ComponentProps<'div'>) {
 export function Section({ alt, className, ...props }: ComponentProps<'section'> & { alt?: boolean }) {
   return (
     <section
-      className={cn('py-16 xs:py-[88px]', alt && 'border-y border-line bg-surface', className)}
+      className={cn('py-16 xs:py-[88px]', alt && 'section-alt', className)}
       {...props}
     />
   )

@@ -9,7 +9,7 @@ const linkClass = 'inline-flex items-center gap-2 text-muted transition-colors d
 
 export function Footer() {
   return (
-    <footer className="border-t border-line pt-12 pb-24">
+    <footer className="relative bg-[radial-gradient(50%_120%_at_50%_0%,rgb(255_140_0/0.07),transparent_70%)] pt-12 pb-24 before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-linear-to-r before:from-transparent before:via-accent/35 before:to-transparent before:content-['']">
       <Container className="flex flex-wrap items-center justify-between gap-6">
         <Logo variant="emblem" />
 

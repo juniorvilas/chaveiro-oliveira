@@ -8,6 +8,7 @@ import { Location } from './components/Location'
 import { Footer } from './components/Footer'
 import { WhatsAppFloat } from './components/WhatsAppFloat'
 import { Statement } from './components/Statement'
+import { LockBand } from './components/LockBand'
 import { useScrollEffects } from './lib/scrollFx'
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
         <Reviews />
         <Statement />
         <WhyUs />
+        <LockBand />
         <Location />
       </main>
       <Footer />

@@ -10,7 +10,7 @@ const words = text.split(' ')
 export function Statement() {
   return (
     <section className="statement py-28" data-scroll="pin" aria-label="Como trabalhamos">
-      <div className="statement-sticky">
+      <div className="statement-sticky bg-[radial-gradient(55%_45%_at_50%_50%,rgb(255_140_0/0.09),transparent_70%)]">
         <Container>
           <p className="max-w-[1040px] font-display text-[clamp(1.9rem,5vw,3.5rem)] font-extrabold leading-[1.12] tracking-[-0.025em]">
             {words.map((w, i) => (
