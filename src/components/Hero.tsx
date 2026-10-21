@@ -34,7 +34,7 @@ export function Hero() {
             className="reveal mt-6 text-[clamp(2.4rem,5.4vw,3.9rem)] font-extrabold leading-[1.04] tracking-[-0.025em]"
             style={step(1)}
           >
-            Sua chave resolvida onde você estiver.
+            Sua <span className="text-accent">chave</span> resolvida onde você estiver.
           </h1>
           <p className="reveal mt-[22px] max-w-[560px] text-[1.15rem] text-muted" style={step(2)}>
             Chaves codificadas, abertura de cofre, troca de segredo, fechadura digital, cópia de chaves e afiação de
