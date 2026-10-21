@@ -37,8 +37,8 @@ export function Hero() {
             Sua <span className="text-accent">chave</span> resolvida onde você estiver.
           </h1>
           <p className="reveal mt-[22px] max-w-[560px] text-[1.15rem] text-muted" style={step(2)}>
-            Chaves codificadas, abertura de cofre, troca de segredo, fechadura digital, cópia de chaves e afiação de
-            alicate. Agende pelo WhatsApp e o chaveiro vai até você.
+            Chaves codificadas, abertura de portas e cofres, troca de segredo, fechadura digital, cópia de chaves e
+            carimbos. Agende pelo WhatsApp e o chaveiro vai até você.
           </p>
 
           <div className="reveal mt-8 flex flex-wrap gap-3" style={step(3)}>

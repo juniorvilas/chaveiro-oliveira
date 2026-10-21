@@ -8,7 +8,7 @@ import { Container, Lead, Section, SectionTitle } from './ui'
 import { buttonClass, cardClass, cn } from '../lib/styles'
 
 const steps = [
-  { icon: MessageCircle, title: 'Chame no WhatsApp', text: 'Conte o que precisa: tipo de chave, fechadura, cofre ou alicate.' },
+  { icon: MessageCircle, title: 'Chame no WhatsApp', text: 'Conte o que precisa: chave, fechadura, porta, carro, cofre ou carimbo.' },
   { icon: CalendarCheck, title: 'Agende', text: 'Combinamos o dia, o horário e o endereço que for melhor para você.' },
   { icon: Truck, title: 'Vamos até você', text: 'O chaveiro vai ao local agendado e resolve na hora.' },
 ]

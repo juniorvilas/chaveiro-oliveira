@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react'
-import { Cpu, Vault, LockKeyhole, Fingerprint, Copy, Scissors } from 'lucide-react'
+import { Cpu, DoorOpen, Vault, LockKeyhole, Fingerprint, Copy, Stamp } from 'lucide-react'
 
 export const business = {
   name: 'Chaveiro Oliveira',
@@ -37,6 +37,11 @@ export const services: Service[] = [
     icon: Cpu,
   },
   {
+    title: 'Abertura de portas',
+    description: 'Abertura de portas residenciais e de carros, com agilidade e sem estragar a fechadura.',
+    icon: DoorOpen,
+  },
+  {
     title: 'Abertura de cofre',
     description: 'Abertura técnica de cofres mecânicos e eletrônicos, com cuidado para não danificar.',
     icon: Vault,
@@ -57,9 +62,9 @@ export const services: Service[] = [
     icon: Copy,
   },
   {
-    title: 'Afiação de alicate',
-    description: 'Afiação de alicates de cutícula e unha, deixando o corte como novo.',
-    icon: Scissors,
+    title: 'Carimbos',
+    description: 'Confecção de carimbos personalizados para empresas, profissionais e uso pessoal.',
+    icon: Stamp,
   },
 ]
 
