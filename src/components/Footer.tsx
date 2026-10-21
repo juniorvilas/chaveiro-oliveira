@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="border-t border-line pt-12 pb-24">
       <Container className="flex flex-wrap items-center justify-between gap-6">
-        <Logo />
+        <Logo variant="emblem" />
 
         <ul className="flex flex-wrap gap-x-6 gap-y-3">
           <li><a className={linkClass} href={waLink()} target="_blank" rel="noopener"><WhatsAppIcon size={18} /> WhatsApp</a></li>

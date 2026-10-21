@@ -8,20 +8,19 @@
   --color-line: #2e2e2e;
   --color-fg: #f2f2f2;
   --color-muted: #a8a8a8;
-  --color-accent: #f5b800;
-  --color-accent-hover: #ffc929;
+  --color-accent: #ffa000; /* laranja do logo */
+  --color-accent-hover: #ffb733;
   --color-on-accent: #121212;
-  --color-olive: #9bb04a;
   --color-whatsapp: #25d366;
   --color-danger: #ff6b6b;
 
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Archivo', system-ui, sans-serif;
-  --font-logo: 'Montserrat', 'Archivo', system-ui, sans-serif;
+  --font-logo: 'Oswald', 'Archivo', system-ui, sans-serif;
 
   --radius-card: 14px;
   --shadow-card: 0 0 0 1px rgb(255 255 255 / 0.06), 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
-  --shadow-card-hover: 0 0 0 1px rgb(245 184 0 / 0.45), 0 1px 2px rgb(0 0 0 / 0.4), 0 16px 32px -16px rgb(0 0 0 / 0.7);
+  --shadow-card-hover: 0 0 0 1px rgb(255 160 0 / 0.45), 0 1px 2px rgb(0 0 0 / 0.4), 0 16px 32px -16px rgb(0 0 0 / 0.7);
   --ease-quint: cubic-bezier(0.23, 1, 0.32, 1);
 
   /* Barrinha de progresso da bolinha ativa do carrossel (5s por foto) */
@@ -121,29 +120,15 @@
   }
 }
 
-/* Logo do cabeçalho: o "O" se desenha e a chave desliza para dentro dele */
-.logo-intro .logo-ring {
-  stroke-dasharray: 1;
-  animation: draw 700ms var(--ease-quint) 100ms both;
+/* Logo do cabeçalho: entra girando, como uma chave virando na fechadura */
+.logo-intro .logo-emblem {
+  animation: turn-in 900ms var(--ease-quint) 80ms both;
 }
 
-.logo-intro .logo-key {
-  animation: insert 700ms var(--ease-quint) 250ms both;
-}
-
-@keyframes draw {
-  from {
-    stroke-dashoffset: 1;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes insert {
+@keyframes turn-in {
   from {
     opacity: 0;
-    transform: translateX(-40px);
+    transform: rotate(-120deg) scale(0.6);
   }
 }
 
@@ -210,8 +195,7 @@
   .reveal,
   .reveal-right,
   .settle,
-  .logo-intro .logo-ring,
-  .logo-intro .logo-key {
+  .logo-intro .logo-emblem {
     animation: none;
   }
 }

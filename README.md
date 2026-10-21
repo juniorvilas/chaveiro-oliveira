@@ -30,14 +30,12 @@ As fotos do carrossel ficam em `public/media/` e são listadas em `gallery` no `
 
 ## Logo
 
-Marca "chave no O" (chave atravessando o O de Oliveira, com folha de oliveira). Arquivos em `logo/`:
+Logo original do Chaveiro Oliveira. Arquivos em `logo/`:
 
-- `marca.svg` / `marca-preta.svg`: só o símbolo (vetor, para impressão)
-- `icone.svg` / `icone-512.png`: foto de perfil (Instagram, WhatsApp) e favicon
-- `logo-vertical-*.png` e `logo-horizontal-*.png`: versões para fundo escuro, claro e transparente
-- `propostas.png`: as 6 propostas iniciais
+- `logo-original.jpg`: arquivo original enviado pelo cliente
+- `logo-circulo-512.png`: o mesmo logo recortado em círculo, com fundo transparente
 
-Fonte do logo: Montserrat (Google Fonts), 900 em OLIVEIRA e 700 em CHAVEIRO.
+No site: `public/logo.png` (cabeçalho, rodapé e Google), `public/favicon.png` e `public/apple-touch-icon.png`.
 
 ## Avaliações
 
