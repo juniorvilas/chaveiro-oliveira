@@ -20,7 +20,7 @@ Os dados para o Google (SEO) ficam no `<script type="application/ld+json">` em `
 ## Galeria
 
 As fotos do carrossel ficam em `public/media/` e são listadas em `gallery` no `src/data/business.ts`
-(aceita `type: 'image'` ou `type: 'video'`). As atuais são ilustrativas, da Wikimedia Commons, com créditos no rodapé.
+(aceita `type: 'image'` ou `type: 'video'`). São fotos reais do trabalho do Chaveiro Oliveira.
 
 ## Logo
 

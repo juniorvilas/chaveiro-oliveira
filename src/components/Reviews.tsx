@@ -21,7 +21,6 @@ export function Reviews() {
       <div className="container">
         <div className="reviews__head">
           <div>
-            <p className="eyebrow">Avaliações</p>
             <h2>Quem contratou, recomenda</h2>
           </div>
           <a className="score" href={business.google} target="_blank" rel="noopener">

@@ -12,7 +12,6 @@ export function WhyUs() {
   return (
     <section id="sobre" className="section section--alt">
       <div className="container">
-        <p className="eyebrow">Por que nós</p>
         <h2>Quem atende, resolve</h2>
         <ul className="why">
           {items.map(({ icon: Icon, title, text }) => (

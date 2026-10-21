@@ -26,7 +26,6 @@ export function Location() {
     <section id="atendimento" className="section">
       <div className="container location">
         <div>
-          <p className="eyebrow">Atendimento</p>
           <h2>A gente vai até você</h2>
           <p className="section__lead">
             Sem loja física: o atendimento é feito pessoalmente, no endereço que você agendar, em {business.serviceArea}.

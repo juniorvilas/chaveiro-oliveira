@@ -71,7 +71,6 @@ export function Gallery() {
       <div className="container">
         <div className="gallery__head">
           <div>
-            <p className="eyebrow">Galeria</p>
             <h2>Nosso trabalho</h2>
           </div>
           <div className="gallery__arrows">

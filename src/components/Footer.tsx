@@ -18,7 +18,7 @@ export function Footer() {
         </ul>
 
         <p className="footer__copy">
-          © {new Date().getFullYear()} {business.name} · Atendimento a domicílio em {business.serviceArea}
+          © {new Date().getFullYear()} {business.name}. Atendimento a domicílio em {business.serviceArea}.
         </p>
 
         <p className="footer__dev">

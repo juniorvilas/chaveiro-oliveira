@@ -79,13 +79,6 @@ export type Media = {
 export const gallery: Media[] = [
   {
     type: 'image',
-    src: '/media/instalacao-porta.jpg',
-    caption: 'Instalação de fechadura no local',
-    alt: 'Chaveiro Oliveira ajoelhado instalando uma fechadura em porta de madeira',
-    position: '50% 60%',
-  },
-  {
-    type: 'image',
     src: '/media/fechadura-biometrica.jpg',
     caption: 'Fechadura digital com biometria',
     alt: 'Fechadura digital preta com teclado numérico e leitor de digital instalada em porta de madeira',
@@ -131,6 +124,13 @@ export const gallery: Media[] = [
     caption: 'Fechadura digital instalada',
     alt: 'Fechadura digital preta com puxador instalada em porta de madeira',
     position: '30% 45%',
+  },
+  {
+    type: 'image',
+    src: '/media/instalacao-porta.jpg',
+    caption: 'Instalação de fechadura no local',
+    alt: 'Chaveiro Oliveira ajoelhado instalando uma fechadura em porta de madeira',
+    position: '50% 60%',
   },
 ]
 

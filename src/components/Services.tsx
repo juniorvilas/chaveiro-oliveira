@@ -1,12 +1,11 @@
-import { ArrowRight } from 'lucide-react'
 import { services } from '../data/business'
 import { waLink } from '../lib/whatsapp'
+import { WhatsAppIcon } from './BrandIcons'
 
 export function Services() {
   return (
     <section id="servicos" className="section">
       <div className="container">
-        <p className="eyebrow">Serviços</p>
         <h2>O que fazemos</h2>
         <p className="section__lead">Trabalho feito com ferramenta certa e precisão — na hora, sempre que possível.</p>
 
@@ -22,7 +21,7 @@ export function Services() {
                 target="_blank"
                 rel="noopener"
               >
-                Pedir orçamento <ArrowRight size={16} aria-hidden="true" />
+                <WhatsAppIcon size={18} /> Pedir orçamento no WhatsApp
               </a>
             </li>
           ))}
