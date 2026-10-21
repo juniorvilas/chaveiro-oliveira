@@ -769,6 +769,9 @@ ul {
 }
 
 .footer__dev a {
+  display: inline-block;
+  padding: 10px 4px;
+  margin: -10px -4px;
   color: var(--accent);
   font-weight: 600;
 }
@@ -815,7 +818,20 @@ ul {
   transition: transform 0.2s;
 }
 
-.wa-float:hover {
+.wa-float {
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.wa-float--visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.wa-float--visible:hover {
   transform: scale(1.08);
 }
 
