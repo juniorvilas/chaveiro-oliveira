@@ -26,14 +26,14 @@ export function Location() {
     <section id="atendimento" className="section">
       <div className="container location">
         <div>
-          <h2>A gente vai até você</h2>
-          <p className="section__lead">
+          <h2 className="fx" data-scroll="enter">A gente vai até você</h2>
+          <p className="section__lead fx" data-scroll="enter" data-delay="0.15">
             Sem loja física: o atendimento é feito pessoalmente, no endereço que você agendar, em {business.serviceArea}.
           </p>
 
           <ol className="steps">
             {steps.map(({ icon: Icon, title, text }, i) => (
-              <li key={title}>
+              <li key={title} className="fx" data-scroll="enter" data-delay={i * 0.15}>
                 <span className="steps__num" aria-hidden="true">{i + 1}</span>
                 <div>
                   <h3><Icon size={18} aria-hidden="true" /> {title}</h3>
@@ -53,7 +53,7 @@ export function Location() {
           </a>
         </div>
 
-        <div className="hours">
+        <div className="hours fx" data-scroll="enter" data-delay="0.1">
           <div className="hours__head">
             <Clock size={20} aria-hidden="true" />
             <span>Horário de atendimento</span>

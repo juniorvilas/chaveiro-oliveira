@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section id="inicio" className="hero">
       <div className="container hero__inner">
-        <div className="hero__text">
+        <div className="hero__text" data-scroll="hero">
           <a className="badge reveal" style={step(0)} href={business.google} target="_blank" rel="noopener">
             <span className="badge__stars" aria-hidden="true">
               {Array.from({ length: 5 }, (_, i) => <Star key={i} size={14} fill="currentColor" />)}
@@ -39,16 +39,18 @@ export function Hero() {
           </p>
         </div>
 
-        <figure className="hero__photo">
-          <img
-            src="/media/instalacao-porta.jpg"
-            alt="Tiago, do Chaveiro Oliveira, instalando uma fechadura em porta de madeira"
-            width={900}
-            height={1200}
-            fetchPriority="high"
-          />
-          <figcaption>Tiago em atendimento, instalando uma fechadura</figcaption>
-        </figure>
+        <div className="hero__media" data-scroll="hero">
+          <figure className="hero__photo">
+            <img
+              src="/media/instalacao-porta.jpg"
+              alt="Tiago, do Chaveiro Oliveira, instalando uma fechadura em porta de madeira"
+              width={900}
+              height={1200}
+              fetchPriority="high"
+            />
+            <figcaption>Tiago em atendimento, instalando uma fechadura</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
   )

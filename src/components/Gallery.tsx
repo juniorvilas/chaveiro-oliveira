@@ -71,7 +71,7 @@ export function Gallery() {
       <div className="container">
         <div className="gallery__head">
           <div>
-            <h2>Nosso trabalho</h2>
+            <h2 className="fx" data-scroll="enter">Nosso trabalho</h2>
           </div>
           <div className="gallery__arrows">
             <button className="icon-btn" onClick={() => step(-1)} disabled={pos.atStart} aria-label="Anterior">
@@ -88,7 +88,7 @@ export function Gallery() {
           </div>
         </div>
 
-        <ul ref={track} className="gallery" aria-label="Galeria de fotos">
+        <ul ref={track} className="gallery fx-slide" data-scroll="enter" aria-label="Galeria de fotos">
           {gallery.map((m, i) => (
             <li key={m.src} className="slide" aria-label={`${i + 1} de ${gallery.length}: ${m.caption}`}>
               <div className="slide__media">

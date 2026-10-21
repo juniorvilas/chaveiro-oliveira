@@ -21,7 +21,7 @@ export function Reviews() {
       <div className="container">
         <div className="reviews__head">
           <div>
-            <h2>Quem contratou, recomenda</h2>
+            <h2 className="fx" data-scroll="enter">Quem contratou, recomenda</h2>
           </div>
           <a className="score" href={business.google} target="_blank" rel="noopener">
             <span className="score__num">{business.rating}</span>
@@ -33,8 +33,8 @@ export function Reviews() {
         </div>
 
         <ul className="reviews">
-          {reviews.map((r) => (
-            <li key={r.author} className="review">
+          {reviews.map((r, i) => (
+            <li key={r.author} className="review fx" data-scroll="enter" data-delay={(i % 4) * 0.15}>
               <Quote size={28} className="review__quote" aria-hidden="true" />
               <Stars />
               <span className="sr-only">5 de 5 estrelas.</span>

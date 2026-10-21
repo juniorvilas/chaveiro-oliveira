@@ -12,10 +12,10 @@ export function WhyUs() {
   return (
     <section id="sobre" className="section section--alt">
       <div className="container">
-        <h2>Quem atende, resolve</h2>
+        <h2 className="fx" data-scroll="enter">Quem atende, resolve</h2>
         <ul className="why">
-          {items.map(({ icon: Icon, title, text }) => (
-            <li key={title}>
+          {items.map(({ icon: Icon, title, text }, i) => (
+            <li key={title} className="fx" data-scroll="enter" data-delay={(i % 4) * 0.15}>
               <Icon size={24} className="why__icon" aria-hidden="true" />
               <div>
                 <h3>{title}</h3>

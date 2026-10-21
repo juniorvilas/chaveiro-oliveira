@@ -71,6 +71,10 @@ ul {
   border-radius: 6px;
 }
 
+main {
+  overflow-x: clip;
+}
+
 .container {
   width: 100%;
   max-width: 1120px;
@@ -448,6 +452,67 @@ ul {
     opacity: 0;
     transform: translateX(-40px);
   }
+}
+
+/* Efeitos de rolagem (ver src/lib/scrollFx.ts). Só valem com a classe .scroll-fx, que o JS
+   adiciona quando o visitante não pediu para reduzir movimento; sem ela, tudo fica parado e visível. */
+.scroll-fx .fx {
+  opacity: var(--p, 1);
+  transform: translate3d(0, calc((1 - var(--p, 1)) * 40px), 0) scale(calc(0.97 + var(--p, 1) * 0.03));
+}
+
+.scroll-fx .fx-slide {
+  opacity: var(--p, 1);
+  transform: translate3d(calc((1 - var(--p, 1)) * 90px), 0, 0);
+}
+
+.scroll-fx .hero__text {
+  opacity: calc(1 - var(--p, 0) * 1.5);
+  transform: translate3d(0, calc(var(--p, 0) * -90px), 0);
+}
+
+.scroll-fx .hero__media {
+  transform: translate3d(0, calc(var(--p, 0) * 70px), 0) scale(calc(1 - var(--p, 0) * 0.12));
+  transform-origin: 50% 0;
+}
+
+@media (max-width: 860px) {
+  /* No celular a abertura é longa: só a foto reage, o texto e os botões ficam firmes. */
+  .scroll-fx .hero__text {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Frase que acende palavra por palavra */
+.statement {
+  padding: 112px 0;
+}
+
+.statement__text {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  max-width: 1040px;
+}
+
+.scroll-fx .statement {
+  height: 240vh;
+  padding: 0;
+}
+
+.scroll-fx .statement__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.scroll-fx .statement__text span {
+  opacity: calc(0.14 + 0.86 * clamp(0, (var(--p, 1) * 1.15 - var(--w)) * 8, 1));
 }
 
 /* Seções */

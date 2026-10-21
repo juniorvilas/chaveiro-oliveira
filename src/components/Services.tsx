@@ -6,12 +6,12 @@ export function Services() {
   return (
     <section id="servicos" className="section">
       <div className="container">
-        <h2>O que fazemos</h2>
-        <p className="section__lead">Trabalho feito com ferramenta certa e precisão — na hora, sempre que possível.</p>
+        <h2 className="fx" data-scroll="enter">O que fazemos</h2>
+        <p className="section__lead fx" data-scroll="enter" data-delay="0.15">Trabalho feito com ferramenta certa e precisão — na hora, sempre que possível.</p>
 
         <ul className="services">
-          {services.map(({ title, description, icon: Icon }) => (
-            <li key={title} className="card">
+          {services.map(({ title, description, icon: Icon }, i) => (
+            <li key={title} className="card fx" data-scroll="enter" data-delay={(i % 3) * 0.18}>
               <span className="card__icon"><Icon size={26} aria-hidden="true" /></span>
               <h3>{title}</h3>
               <p>{description}</p>

@@ -7,8 +7,12 @@ import { Reviews } from './components/Reviews'
 import { Location } from './components/Location'
 import { Footer } from './components/Footer'
 import { WhatsAppFloat } from './components/WhatsAppFloat'
+import { Statement } from './components/Statement'
+import { useScrollEffects } from './lib/scrollFx'
 
 export default function App() {
+  useScrollEffects()
+
   return (
     <>
       <Header />
@@ -17,6 +21,7 @@ export default function App() {
         <Services />
         <Gallery />
         <Reviews />
+        <Statement />
         <WhyUs />
         <Location />
       </main>
