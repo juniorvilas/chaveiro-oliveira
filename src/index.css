@@ -354,35 +354,31 @@ main {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* Sequência de entrada: a foto se revela e o texto entra em cascata */
+/* Sequência de entrada: o texto vem da esquerda e a foto da direita, e os dois se encontram */
 .reveal {
-  animation: rise 640ms var(--ease-out) both;
-  animation-delay: calc(120ms + var(--i, 0) * 70ms);
+  animation: from-left 1000ms var(--ease-out) both;
+  animation-delay: calc(80ms + var(--i, 0) * 60ms);
 }
 
 .hero__photo {
-  animation: unveil 900ms var(--ease-out) both;
+  animation: from-right 1100ms var(--ease-out) 120ms both;
 }
 
 .hero__photo img {
   animation: settle 1200ms var(--ease-out) both;
 }
 
-@keyframes rise {
+@keyframes from-left {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateX(-45vw);
   }
 }
 
-@keyframes unveil {
+@keyframes from-right {
   from {
-    clip-path: inset(18% 0 0 0 round 24px);
     opacity: 0;
-  }
-  to {
-    clip-path: inset(0 0 0 0 round 24px);
-    opacity: 1;
+    transform: translateX(45vw);
   }
 }
 
@@ -466,14 +462,20 @@ main {
   transform: translate3d(calc((1 - var(--p, 1)) * 90px), 0, 0);
 }
 
+.scroll-fx .fx-left {
+  opacity: var(--p, 1);
+  transform: translate3d(calc((1 - var(--p, 1)) * -160px), 0, 0);
+}
+
+/* Ao descer, texto e foto se separam para os lados; ao subir, se reencontram */
 .scroll-fx .hero__text {
-  opacity: calc(1 - var(--p, 0) * 1.5);
-  transform: translate3d(0, calc(var(--p, 0) * -90px), 0);
+  opacity: calc(1 - var(--p, 0) * 1.3);
+  transform: translate3d(calc(var(--p, 0) * -30vw), 0, 0);
 }
 
 .scroll-fx .hero__media {
-  transform: translate3d(0, calc(var(--p, 0) * 70px), 0) scale(calc(1 - var(--p, 0) * 0.12));
-  transform-origin: 50% 0;
+  opacity: calc(1 - var(--p, 0) * 1.1);
+  transform: translate3d(calc(var(--p, 0) * 30vw), 0, 0);
 }
 
 @media (max-width: 860px) {
