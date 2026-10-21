@@ -133,3 +133,25 @@ export const gallery: Media[] = [
     position: '30% 45%',
   },
 ]
+
+export type Review = { author: string; text: string }
+
+// Avaliações reais do perfil no Google (texto como publicado; só frases completas quando o Google corta).
+export const reviews: Review[] = [
+  {
+    author: 'Daniela Ribeiro',
+    text: 'Profissional excelente, foi recomendado por uma amiga e agora eu recomendo à todos. Minha porta já estava com alguns problemas, mas ainda assim o Tiago resolveu tudo com muita paciência e profissionalismo. Recomendo demais!!',
+  },
+  {
+    author: 'Scheila Santana',
+    text: 'Um trabalho de excelência merece reconhecimento: fechadura digital instalada com precisão, cuidado e tecnologia. Quando o profissional é bom, a segurança agradece.',
+  },
+  {
+    author: 'Suzane Silva',
+    text: 'Excelente. Amei demais o serviço, o atendimento e profissionalismo. Minha fechadura ficou com um acabamento incrível. Estou apaixonada.',
+  },
+  {
+    author: 'Wedson Araujo',
+    text: 'Tiago é um Excelente profissional. Extremamente satisfeito com o serviço prestado.',
+  },
+]

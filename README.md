@@ -33,14 +33,6 @@ Marca "chave no O" (chave atravessando o O de Oliveira, com folha de oliveira). 
 
 Fonte do logo: Montserrat (Google Fonts), 900 em OLIVEIRA e 700 em CHAVEIRO.
 
-## Avaliações do Google (automáticas)
+## Avaliações
 
-A seção "Avaliações" busca nota, total e até 5 avaliações do Google pela função `api/reviews.ts` (Vercel),
-usando a Places API (New). A chave fica só no servidor. Configure na Vercel em
-**Settings → Environment Variables**:
-
-- `GOOGLE_PLACES_API_KEY`: chave do Google Cloud com a "Places API (New)" ativada (restrinja a chave a essa API)
-- `GOOGLE_PLACE_ID` (opcional): ID do lugar; sem ele, a função encontra o perfil pela busca "CHAVEIRO OLIVEIRA Lauro de Freitas BA"
-
-A resposta fica em cache por 24h na CDN da Vercel. Localmente, crie um `.env.local` (ignorado pelo git) com essas duas variáveis: o `npm run dev` já serve `/api/reviews` lendo esse arquivo. Sem a chave,
-a seção mostra só a nota e o link para o Google.
+Os depoimentos ficam em `reviews` no `src/data/business.ts`, copiados do perfil no Google.
