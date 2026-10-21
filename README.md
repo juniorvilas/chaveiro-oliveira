@@ -42,5 +42,5 @@ usando a Places API (New). A chave fica só no servidor. Configure na Vercel em
 - `GOOGLE_PLACES_API_KEY`: chave do Google Cloud com a "Places API (New)" ativada (restrinja a chave a essa API)
 - `GOOGLE_PLACE_ID` (opcional): ID do lugar; sem ele, a função encontra o perfil pela busca "CHAVEIRO OLIVEIRA Lauro de Freitas BA"
 
-A resposta fica em cache por 24h na CDN da Vercel. Sem a chave (ou com o `npm run dev` local, que não roda funções),
-a seção mostra só a nota e o link para o Google. Para testar a função localmente, use `npx vercel dev`.
+A resposta fica em cache por 24h na CDN da Vercel. Localmente, crie um `.env.local` (ignorado pelo git) com essas duas variáveis: o `npm run dev` já serve `/api/reviews` lendo esse arquivo. Sem a chave,
+a seção mostra só a nota e o link para o Google.
