@@ -136,7 +136,7 @@ $ npm run build
 - **SEO:** título, descrição e dados estruturados para o Google ficam no `index.html`; o `sitemap.xml` e o `robots.txt`, em `public/`.
 - **Estilos:** cores, fontes e breakpoints da marca ficam no `@theme` de `src/index.css`. Botão, card e `cn()` ficam em `src/lib/styles.ts`, e `Section`, `Container`, `SectionTitle` e `Lead` em `src/components/ui.tsx`.
 - **Animações:** os efeitos de rolagem (`fx`, `fx-left`, `reveal`…) e o cadeado ficam em `src/index.css`, ligados ao `src/lib/scrollFx.ts`.
-- **Logo:** o logo original do cliente fica em `logo/`; no site são usados `public/logo.png`, `public/favicon.png` e `public/apple-touch-icon.png`.
+- **Logo:** o logo original do cliente fica em `logo/`; no site são usados `public/logo.png`, `public/favicon.ico`, `public/favicon-{48,96,192}.png` e `public/apple-touch-icon.png`.
 - **Deploy:** cada push na branch `main` publica automaticamente na Vercel.
 
 ## :memo: Licença ##
